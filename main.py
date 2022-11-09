@@ -9,9 +9,9 @@ def logger(path):
             start_time = time.ctime(time.time())
             result = old_function(*args, **kwargs)
             name = old_function.__name__
-            arg = f'{args}{kwargs}'
-            res = f'{result}'
-            log = [start_time, name, arg, res, '\n']
+            arg = f'{args}{kwargs} '
+            res = f'{result} '
+            log = [f'{start_time} ', f'{name} ', arg, res, '\n']
             with open(path, 'a+', encoding='utf-8') as f:
                 f.writelines(log)
             return result
